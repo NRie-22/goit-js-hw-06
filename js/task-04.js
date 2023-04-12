@@ -1,10 +1,18 @@
-const textInput = document.querySelector('#name-input')
-const output = document.querySelector('#name-output')
+const btnDec = document.querySelector('button[data-action="decrement"]');
+const btnInc = document.querySelector('button[data-action="increment"]');
+const counter = document.getElementById('value');
 
-textInput.addEventListener('input', event => {
-	output.textContent = event.target.value
+let counterValue = 0;
 
-	if (event.target.value === '') {
-		output.textContent = 'Anonymous'
-	}
-})
+btnDec.addEventListener('click', decrementCounetr);
+btnInc.addEventListener('click', incrementCounetr);
+
+function decrementCounetr() { 
+    counterValue -= 1;
+    counter.textContent = counterValue;
+};
+
+function incrementCounetr() { 
+    counterValue += 1;
+    counter.textContent = counterValue;
+};
